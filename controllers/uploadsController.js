@@ -54,11 +54,11 @@ const uploadProductImage = async (req, res) => {
     }
   );
 
-  // Delete the tem files from the server
+  // Delete the temp files from the server.
   fs.unlinkSync(req.files.image.tempFilePath);
 
   // Return the url where the image is stored on the cloud : secure_url
   return res.status(StatusCodes.OK).json({ image: { src: result.secure_url } });
 };
 
-module.exports = { uploadProductImage };
+module.exports = { uploadProductImage, uploadProductImageLocal };
