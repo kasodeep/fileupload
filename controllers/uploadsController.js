@@ -25,14 +25,14 @@ const uploadProductImageLocal = async (req, res) => {
   const maxSize = 1024 * 1024 * 10;
   if (productImage.size > maxSize) {
     throw new CustomError.BadRequestError(
-      "Please upload image smaller than 10MB"
+      "Please upload image smaller than 10MB",
     );
   }
 
-  // Upload the image in the local folder on the server using the mv method
+  // Upload the image in the local folder on the server using the mv method.
   const imagePath = path.join(
     __dirname,
-    "../public/uploads/" + `${productImage.name}`
+    "../public/uploads/" + `${productImage.name}`,
   );
   await productImage.mv(imagePath);
 
@@ -51,7 +51,7 @@ const uploadProductImage = async (req, res) => {
     {
       use_filename: true,
       folder: "File_Upload",
-    }
+    },
   );
 
   // Delete the temp files from the server.
