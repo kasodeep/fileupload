@@ -1,8 +1,10 @@
+const fs = require("fs");
 const path = require("path");
+
 const { StatusCodes } = require("http-status-codes");
 const CustomError = require("../errors/index");
+
 const cloudinary = require("cloudinary").v2;
-const fs = require("fs");
 
 /**
  * This function is used to upload the images/ files on local device like your 💻.
